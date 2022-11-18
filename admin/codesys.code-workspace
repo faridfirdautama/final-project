@@ -1,0 +1,51 @@
+{
+	"folders": [
+		{
+			"name": "codesys",
+			"path": "B:/KULIAH/Tugas pertofolio/codesys-1/codesys"
+		},
+		{
+			"name": "pbo",
+			"path": "../../pbo"
+		},
+		{
+			"name": "pemrograman_web",
+			"path": "../../pemrograman_web"
+		},
+		{
+			"name": "tugas_pweb",
+			"path": "../../tugas_pweb"
+		},
+		{
+			"name": "BELAJAR HTML",
+			"path": "B:/BELAJAR HTML"
+		},
+		{
+			"name": "web",
+			"path": "B:/web"
+		},
+		{
+			"name": "web-teori",
+			"path": "B:/KULIAH/3. Semester 3/web-teori"
+		},
+		{
+			"name": "final",
+			"path": "../../final"
+		},
+		{
+			"name": "project",
+			"path": "../../project"
+		},
+		{
+			"name": "final_project",
+			"path": ".."
+		},
+		{
+			"name": "final-project-smt3",
+			"path": "../../final-project-smt3"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web"
+	}
+}
