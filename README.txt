@@ -2,9 +2,3 @@
 /
 /
 /
-
-
-aji coba
-
-
-agung coba
