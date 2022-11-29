@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 22, 2020 at 03:07 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Host: 127.0.0.1
+-- Generation Time: Nov 29, 2022 at 05:26 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpustakaan`
+-- Database: `inventaris`
 --
 
 -- --------------------------------------------------------
@@ -47,7 +47,36 @@ INSERT INTO `buku` (`id`, `judul`, `id_penerbit`, `tahun_terbit`, `penulis`, `is
 (2, 'Koleksi Program Web PHP', 1, '2020', 'YUNIAR SUPARDI &amp; IRWAN KURNIAWAN, S.KOM.', '9786230014994', 5, '2020-05-14'),
 (3, 'Si Kancil &amp; Teman-Temannya', 2, '2019', 'Mulasih &amp; Nafika', ' 9786237046271', 3, '2020-05-14'),
 (7, 'Pintar Microsoft Office', 4, '2020', 'Aladin Isyawan', '9786230014000Y', 5, '2020-05-19'),
-(8, 'Jadi Youtuber', 1, '2018', 'Popeye', '9786230014000ZX', 5, '2020-05-19');
+(8, 'Jadi Youtuber', 1, '2018', 'Popeye', '9786230014000ZX', 5, '2020-05-19'),
+(14, 'aji', 2, '223', 'aji', 'aji', 3, '2022-11-26'),
+(17, 'ghj', 3, '12', 'ghjk', 'fghjk', 1, '2022-11-26'),
+(18, 'aji', 2, '2022', 'aji', 'aji', 2, '2022-11-27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_barang`
+--
+
+CREATE TABLE `data_barang` (
+  `id` int(5) NOT NULL,
+  `kode_barang` varchar(13) NOT NULL,
+  `nama_barang` varchar(100) NOT NULL,
+  `tipe_barang` varchar(250) NOT NULL,
+  `jmlh_stok` int(3) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `tgl_regist` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_barang`
+--
+
+INSERT INTO `data_barang` (`id`, `kode_barang`, `nama_barang`, `tipe_barang`, `jmlh_stok`, `lokasi`, `tgl_regist`) VALUES
+(1, 'spm-20221-001', 'aji', 'aji', 3, 'aji', '2022-11-26'),
+(2, 'aji', 'aji', 'aji', 4, 'aji', '2022-11-27'),
+(11, 'gtyui', 'hjkl', 'hjkl', 56, 'ghjkl', '2022-11-29'),
+(12, 'anisa', 'alifa', 'cantik', 4, 'magelang', '2022-11-29');
 
 -- --------------------------------------------------------
 
@@ -80,7 +109,8 @@ INSERT INTO `detail_pinjaman` (`id_pinjaman`, `id_buku`) VALUES
 (14, 2),
 (15, 3),
 (16, 8),
-(16, 1);
+(16, 1),
+(17, 3);
 
 -- --------------------------------------------------------
 
@@ -156,10 +186,11 @@ INSERT INTO `pinjaman` (`id_pinjaman`, `id_member`, `tanggal_pinjam`, `lama_pinj
 (10, 5, '2020-05-19', 3, '2020-05-23', 10000),
 (11, 5, '2020-05-19', 7, '2020-05-28', 20000),
 (12, 5, '2020-05-19', 7, '2020-05-23', 0),
-(13, 5, '2020-05-19', 3, NULL, NULL),
-(14, 5, '2020-05-19', 3, NULL, NULL),
+(13, 5, '2020-05-19', 3, '2022-11-27', 9190000),
+(14, 5, '2020-05-19', 3, '2022-11-27', 9190000),
 (15, 5, '2020-05-23', 7, '2020-05-28', 0),
-(16, 6, '2020-05-23', 7, NULL, NULL);
+(16, 6, '2020-05-23', 7, '2022-11-25', 9090000),
+(17, 7, '2022-11-26', 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -182,7 +213,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `nama`) VALUES
 (4, 'admin', '$2y$10$QSkKJtJCRxCPJlr13od76uSzQwFd3lj/k3DWlV9dg9zkvvv.m9hVW', '1', 'Admin'),
 (5, 'andikatedja', '$2y$10$lzy5dqf4pJlglsXnso46u.u9.YsHPbk.tnut7LVEa8HKLL/clJUF.', '2', 'Andika Tedja'),
-(6, 'anyageraldine', '$2y$10$r/wS0twqMoAcmMd4iYIeaOYixwGaneXx769.PL2Tj1uJtDH2D3dJq', '2', 'Anya Geraldine');
+(6, 'anyageraldine', '$2y$10$r/wS0twqMoAcmMd4iYIeaOYixwGaneXx769.PL2Tj1uJtDH2D3dJq', '2', 'Anya Geraldine'),
+(7, 'aji', '$2y$10$z8cSbLQsstJeZD9vyoyME.KdUu0TxqUh6djTYskOkKVexhAoiEFnS', '2', 'aji');
 
 --
 -- Indexes for dumped tables
@@ -195,6 +227,13 @@ ALTER TABLE `buku`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_penerbit` (`id_penerbit`),
   ADD KEY `id_kategori` (`id_kategori`);
+
+--
+-- Indexes for table `data_barang`
+--
+ALTER TABLE `data_barang`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `kode_part` (`kode_barang`);
 
 --
 -- Indexes for table `detail_pinjaman`
@@ -236,7 +275,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `data_barang`
+--
+ALTER TABLE `data_barang`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -254,13 +299,13 @@ ALTER TABLE `penerbit`
 -- AUTO_INCREMENT for table `pinjaman`
 --
 ALTER TABLE `pinjaman`
-  MODIFY `id_pinjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_pinjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
