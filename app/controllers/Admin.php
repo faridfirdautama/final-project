@@ -115,6 +115,17 @@ class Admin extends Controller
         }
     }
 
+    public function daftar_user()
+    {
+        $data['title'] = 'User';
+        $data['nama'] = $this->payload->nama;
+        $data['data_barang'] = $this->barangModel->getAllBarang();
+
+        $this->view('admin/header', $data);
+        $this->view('admin/daftar-barang', $data);
+        $this->view('admin/footer');
+    }
+
     public function input_peminjaman()
     {
         $data['title'] = 'Input Peminjaman';

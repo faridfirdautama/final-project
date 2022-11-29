@@ -38,17 +38,10 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item <?= ($data['title'] == 'Buku' ? 'active' : '') ?>">
-                <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-buku">
+            <li class="nav-item <?= ($data['title'] == 'User' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-user">
                     <i class="fas fa-book"></i>
-                    <span>Daftar Buku</span>
-                </a>
-            </li>
-            
-            <li class="nav-item <?= ($data['title'] == 'Buku' ? 'active' : '') ?>">
-                <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-buku">
-                    <i class="fas fa-book"></i>
-                    <span>Daftar Buku</span>
+                    <span>Daftar User</span>
                 </a>
             </li>
             <li class="nav-item <?= ($data['title'] == 'Barang' ? 'active' : '') ?>">
