@@ -419,3 +419,8 @@ a.socialIcon:hover,
   -ms-transition: all 0.8s;
   transition: all 0.8s;
 }
+
+login-tengah{
+  align-items: center;
+
+}
