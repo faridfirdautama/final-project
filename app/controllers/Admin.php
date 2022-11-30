@@ -119,10 +119,10 @@ class Admin extends Controller
     {
         $data['title'] = 'User';
         $data['nama'] = $this->payload->nama;
-        $data['data_barang'] = $this->barangModel->getAllBarang();
+        $data['users'] = $this->userModel->getAllUser();
 
         $this->view('admin/header', $data);
-        $this->view('admin/daftar-barang', $data);
+        $this->view('admin/daftar-user', $data);
         $this->view('admin/footer');
     }
 
