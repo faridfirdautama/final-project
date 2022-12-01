@@ -126,6 +126,36 @@ class Admin extends Controller
         $this->view('admin/footer');
     }
 
+    public function detail_user($id = 0)
+    {
+        if ($id) {
+            $data['title'] = 'User';
+            $data['nama'] = $this->payload->nama;
+            $data['users'] = $this->userModel->getDetailUser($id);
+            $this->view('admin/header', $data);
+            $this->view('admin/detail-user', $data);
+            $this->view('admin/footer');
+        } else {
+            echo 'Harap menggunakan tombol yang ada untuk melihat detail user';
+        }
+    }
+
+    public function hapus_user($id = 0)
+    {
+        if ($id) {
+            $hapus = $this->userModel->hapusUser($id);
+            if ($hapus == 0) {
+                Flasher::setFlash('User tidak ditemukan', 'danger');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
+            } else {
+                Flasher::setFlash('User berhasil dihapus', 'success');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
+            }
+        } else {
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+    }
+
     public function input_peminjaman()
     {
         $data['title'] = 'Input Peminjaman';
