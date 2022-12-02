@@ -16,9 +16,6 @@
 <!-- Custom fonts for this template -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
 
-<!-- Custom styles for this template -->
-<link href="<?= BASEURL ?>/css/custom-style.css" rel="stylesheet" />
-
 <!-- DataTables -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.17/dist/css/bootstrap-select.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
@@ -26,7 +23,7 @@
 </head>
 
 <body>
-    <div class="card o-hidden border-0 shadow-lg my-5 col-lg-4 mx-auto">
+    <div class="card o-hidden border-0 shadow-lg my-5 col-lg-3 mx-auto">
         <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
