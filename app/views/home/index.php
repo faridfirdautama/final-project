@@ -20,11 +20,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.17/dist/css/bootstrap-select.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.4/css/responsive.bootstrap4.min.css">
+
+<style>
+    body {
+        padding: 5% 10%;
+    }
+</style>
+
 </head>
 
 <body>
     <div style="">
-        <div class="card o-hidden border-0 shadow-lg my-5 col-lg-3 mx-auto">
+        <div class="card o-hidden border-0 shadow-lg my-5 col-lg-4 mx-auto">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
@@ -56,7 +63,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <p class="small">Belum punya akun? <a href="<?= BASEURL ?>/register">Register</a></p>
+                                <p class="small">Lupa Password? <a href="<?= BASEURL ?>/register">Hubungi admin</a></p>
                             </div>
                         </div>
                     </div>
