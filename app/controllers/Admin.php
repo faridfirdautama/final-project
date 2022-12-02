@@ -115,6 +115,37 @@ class Admin extends Controller
         }
     }
 
+    public function tambah_user() {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+
+        $nama = htmlspecialchars($_POST['nama']);
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $password1 = $_POST['password1'];
+        if ($password == $password1) {
+            $row = $this->userModel->getUserByUsername($username);
+            if ($row) {
+                // User ada 
+                Flasher::setFlash('Maaf, username sudah digunakan.', 'danger');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
+            } else {
+                $insert = $this->userModel->insert($nama, $username, $password);
+                if ($insert) {
+                    Flasher::setFlash('Register berhasil, silahkan login.', 'success');
+                    header('Location: ' . BASEURL . '/admin/daftar-user');
+                } else {
+                    Flasher::setFlash('Gagal register.', 'danger');
+                    header('Location: ' . BASEURL . '/admin/daftar-user');
+                }
+            }
+        } else {
+            Flasher::setFlash('Password dan konfirmasi password salah.', 'danger');
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+    }
+
     public function daftar_user()
     {
         $data['title'] = 'User';
@@ -124,6 +155,36 @@ class Admin extends Controller
         $this->view('admin/header', $data);
         $this->view('admin/daftar-user', $data);
         $this->view('admin/footer');
+    }
+
+    public function detail_user($id = 0)
+    {
+        if ($id) {
+            $data['title'] = 'User';
+            $data['nama'] = $this->payload->nama;
+            $data['users'] = $this->userModel->getDetailUser($id);
+            $this->view('admin/header', $data);
+            $this->view('admin/detail-user', $data);
+            $this->view('admin/footer');
+        } else {
+            echo 'Harap menggunakan tombol yang ada untuk melihat detail user';
+        }
+    }
+
+    public function hapus_user($id = 0)
+    {
+        if ($id) {
+            $hapus = $this->userModel->hapusUser($id);
+            if ($hapus == 0) {
+                Flasher::setFlash('User tidak ditemukan', 'danger');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
+            } else {
+                Flasher::setFlash('User berhasil dihapus', 'success');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
+            }
+        } else {
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
     }
 
     public function input_peminjaman()

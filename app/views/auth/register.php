@@ -1,4 +1,4 @@
-<div class="card o-hidden border-0 shadow-lg my-5 col-lg-7 mx-auto">
+<div class="card o-hidden border-0 shadow-lg my-5 col-lg-3 mx-auto">
     <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
@@ -7,16 +7,16 @@
                     <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Register User Perpustakaan</h1>
                     </div>
-                    <form action="<?= BASEURL ?>/register/regis" method="post">
+                    <form action="<?= BASEURL ?>/admin/tambah_user" method="post">
                         <?php if (Flasher::check()) : ?>
-                        <?php $flash = Flasher::flash() ?>
-                        <div class="alert alert-<?= $flash['tipe'] ?> alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                            <?= $flash['pesan'] ?>
-                        </div>
+                            <?php $flash = Flasher::flash() ?>
+                            <div class="alert alert-<?= $flash['tipe'] ?> alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <?= $flash['pesan'] ?>
+                            </div>
                         <?php endif; ?>
                         <div class="form-group">
                             <label for="nama">Nama</label>
@@ -32,8 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label for="confirm_password">Confirm Password</label>
-                            <input class="form-control" type="password" name="password1" id="confirm_password"
-                                required>
+                            <input class="form-control" type="password" name="password1" id="confirm_password" required>
                         </div>
                         <button class="btn btn-primary btn-user btn-block" type="submit" name="register">Register</button>
                     </form>

@@ -28,6 +28,28 @@ class User_model
         return $this->db->single();
     }
 
+    public function getDetailUser($id)
+    {
+        $this->db->query("SELECT * FROM users WHERE id = '$id'");
+        return $this->db->single();
+    }
+
+    public function hapusUser($id)
+    {
+        //Cek apakah id buku ada dalam database
+        $this->db->query("SELECT id FROM users WHERE id = '$id'");
+        $row = $this->db->numRows();
+        //Jika row berisikan nilai 0 maka tidak ada buku yang ingin dihapus dalam database
+        if ($row == 0) {
+            return 0;
+        }
+
+        $this->db->query("DELETE FROM users WHERE id = :id");
+        $this->db->bind('id', $id);
+        $this->db->execute();
+        return 1;
+    }
+
     public function checkUser($username)
     {
         $this->db->query("SELECT * FROM users WHERE username = '$username'");
