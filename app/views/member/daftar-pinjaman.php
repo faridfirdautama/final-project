@@ -1,4 +1,4 @@
-<h3>Daftar Pinjaman Buku</h3>
+<h3>Daftar Pinjaman Barang</h3>
 <hr>
 
 <div class="card shadow">

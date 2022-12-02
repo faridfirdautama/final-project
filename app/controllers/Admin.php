@@ -115,6 +115,37 @@ class Admin extends Controller
         }
     }
 
+    public function tambah_user() {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+
+        $nama = htmlspecialchars($_POST['nama']);
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $password1 = $_POST['password1'];
+        if ($password == $password1) {
+            $row = $this->userModel->getUserByUsername($username);
+            if ($row) {
+                // User ada 
+                Flasher::setFlash('Maaf, username sudah digunakan.', 'danger');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
+            } else {
+                $insert = $this->userModel->insert($nama, $username, $password);
+                if ($insert) {
+                    Flasher::setFlash('Register berhasil, silahkan login.', 'success');
+                    header('Location: ' . BASEURL . '/admin/daftar-user');
+                } else {
+                    Flasher::setFlash('Gagal register.', 'danger');
+                    header('Location: ' . BASEURL . '/admin/daftar-user');
+                }
+            }
+        } else {
+            Flasher::setFlash('Password dan konfirmasi password salah.', 'danger');
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+    }
+
     public function daftar_user()
     {
         $data['title'] = 'User';

@@ -1,14 +1,14 @@
 <?php
 
-class Member extends Controller
+class Member extends Controller             //inheritence/pearisan dari class controller
 {
-
-    private $peminjamanModel;
+//property
+    private $peminjamanModel;                  
     private $bukuModel;
     private $userModel;
     private $payload;
 
-    function __construct()
+    function __construct()                                            //constructor
     {
         if (SessionManager::checkSession()) {
             $this->payload = SessionManager::getCurrentSession();
@@ -73,6 +73,33 @@ class Member extends Controller
 
         echo json_encode([$buku, $pinjaman]);
     }
+
+    
+    public function input_peminjaman()
+    {
+        $data['title'] = 'Input Peminjaman';
+        $data['nama'] = $this->payload->nama;
+        $data['buku'] = $this->bukuModel->getAllBuku();
+        $data['waktu'] = [
+            [
+                'waktu' => 3,
+                'nama' => '3 Hari'
+            ],
+            [
+                'waktu' => 7,
+                'nama' => '7 Hari'
+            ],
+            [
+                'waktu' => 14,
+                'nama' => '14 Hari'
+            ]
+        ];
+
+        $this->view('member/header', $data);
+        $this->view('member/input-peminjaman', $data);
+        $this->view('member/footer');
+    }
+
 
     public function kontak()
     {

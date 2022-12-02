@@ -1,5 +1,5 @@
 <?php
-
+// berisi logic routing
 class App
 {
     protected $controller = 'Home';

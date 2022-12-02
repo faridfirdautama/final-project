@@ -7,7 +7,7 @@
                     <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Register User Perpustakaan</h1>
                     </div>
-                    <form action="<?= BASEURL ?>/register/regis" method="post">
+                    <form action="<?= BASEURL ?>/admin/tambah_user" method="post">
                         <?php if (Flasher::check()) : ?>
                             <?php $flash = Flasher::flash() ?>
                             <div class="alert alert-<?= $flash['tipe'] ?> alert-dismissible fade show" role="alert">
