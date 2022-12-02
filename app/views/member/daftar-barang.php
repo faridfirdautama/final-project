@@ -1,13 +1,13 @@
 <div class="card shadow">
     <div class="card-body">
-        <h3>Daftar Buku Perpustakaan</h3>
+        <h3>DaftaR Inventaris Perusahaan</h3>
         <hr>
-        <p>Cari dulu disini, kalau ada langsung cus ke perpustakaan!</p>
+        <p>Cari Barang Yang Akan Anda Pinjam !</p>
         <table id="tbl-daftar-buku" class="table dt-responsive nowrap" style="width: 100%;">
             <thead class="thead-light">
                 <tr>
                     <th>No</th>
-                    <th>Nama Buku</th>
+                    <th>Nama Barang</th>
                     <th>Kategori</th>
                     <th>Aksi</th>
                 </tr>
@@ -31,7 +31,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="detailBukuLabel">Detail Buku</h5>
+                    <h5 class="modal-title" id="detailBukuLabel">Detail Barang</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
