@@ -1,4 +1,4 @@
-<div class="card o-hidden border-0 shadow-lg my-5 col-lg-7 mx-auto">
+<div class="card o-hidden border-0 shadow-lg my-5 col-lg-3 mx-auto">
     <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
@@ -9,14 +9,14 @@
                     </div>
                     <form action="<?= BASEURL ?>/admin/tambah_user" method="post">
                         <?php if (Flasher::check()) : ?>
-                        <?php $flash = Flasher::flash() ?>
-                        <div class="alert alert-<?= $flash['tipe'] ?> alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                            <?= $flash['pesan'] ?>
-                        </div>
+                            <?php $flash = Flasher::flash() ?>
+                            <div class="alert alert-<?= $flash['tipe'] ?> alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <?= $flash['pesan'] ?>
+                            </div>
                         <?php endif; ?>
                         <div class="form-group">
                             <label for="nama">Nama</label>

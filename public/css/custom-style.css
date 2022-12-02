@@ -11,7 +11,7 @@ body {
 hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #F05F40;
+  border-color: #2596be;
 }
 
 hr.light {
@@ -19,7 +19,7 @@ hr.light {
 }
 
 a {
-  color: #F05F40;
+  color: #2596be;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -27,12 +27,12 @@ a {
 }
 
 a:hover {
-  color: #f05f40;
+  color: #2596be;
   text-decoration: none;
 }
 
 .bg-primary {
-  background-color: #F05F40 !important;
+  background-color: #2596be !important;
 }
 
 .bg-dark {
@@ -84,12 +84,12 @@ img::-moz-selection {
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
-  color: #F05F40;
+  color: #2596be;
 }
 
 #mainNav .navbar-brand:focus,
 #mainNav .navbar-brand:hover {
-  color: #f05f40;
+  color: #2596be;
 }
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link,
@@ -102,12 +102,12 @@ img::-moz-selection {
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link:hover,
 #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover {
-  color: #F05F40;
+  color: #2596be;
 }
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link.active,
 #mainNav .navbar-nav>li.nav-item>a.nav-link:focus.active {
-  color: #F05F40 !important;
+  color: #2596be !important;
   background-color: transparent;
 }
 
@@ -185,12 +185,12 @@ img::-moz-selection {
   }
 
   #mainNav.navbar-shrink .navbar-brand {
-    color: #F05F40;
+    color: #2596be;
   }
 
   #mainNav.navbar-shrink .navbar-brand:focus,
   #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #f05f40;
+    color: #2596be;
   }
 
   #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link,
@@ -200,7 +200,7 @@ img::-moz-selection {
 
   #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:hover,
   #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus:hover {
-    color: #F05F40;
+    color: #2596be;
   }
 
   .portfolio-item {
@@ -309,7 +309,7 @@ header.masthead p {
 @media (min-width: 768px) {}
 
 .text-primary {
-  color: #F05F40 !important;
+  color: #2596be !important;
 }
 
 .btn {
@@ -324,8 +324,8 @@ header.masthead p {
 }
 
 .btn-primary {
-  background-color: #F05F40;
-  border-color: #F05F40;
+  background-color: #2596be;
+  border-color: #2596be;
 }
 
 .btn-primary:hover,
