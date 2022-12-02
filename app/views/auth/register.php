@@ -1,4 +1,4 @@
-<div class="card o-hidden border-0 shadow-lg my-5 col-lg-3 mx-auto">
+<div class="card o-hidden border-0 shadow-lg my-5 col-lg-5 mx-auto">
     <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
