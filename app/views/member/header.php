@@ -38,36 +38,43 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item <?= ($data['title'] == 'Daftar Buku' ? 'active' : '') ?>">
-                <a class="nav-link" href="<?= BASEURL ?>/member/daftar-buku">
+            <!-- <li class="nav-item <?= ($data['title'] == 'Daftar Barang' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/member/daftar-barang">
                     <i class="fas fa-book"></i>
-                    <span>Daftar Buku</span>
+                    <span>Daftar Barang</span>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item <?= ($data['title'] == 'Daftar Pinjaman' ? 'active' : '') ?>">
                 <a class="nav-link" href="<?= BASEURL ?>/member/daftar-pinjaman">
                     <i class="fas fa-list"></i>
                     <span>Daftar Pinjaman</span>
                 </a>
             </li>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'Input Peminjaman' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/member/input-peminjaman">
+                    <i class="fas fa-arrow-circle-down"></i>
+                    <span>Input Peminjaman</span>
+                </a>
+            </li>
             <li class="nav-item <?= ($data['title'] == 'Kontak' ? 'active' : '') ?>">
                 <a class="nav-link" href="<?= BASEURL ?>/member/kontak">
                     <i class="fas fa-phone-square"></i>
-                    <span>Kontak</span>
+                    <span>Customer Service</span>
                 </a>
             </li>
-            <li class="nav-item <?= ($data['title'] == 'Profil' ? 'active' : '') ?>">
+            <!-- <li class="nav-item <?= ($data['title'] == 'Profil' ? 'active' : '') ?>">
                 <a class="nav-link" href="<?= BASEURL ?>/member/profil">
                     <i class="fas fa-user"></i>
                     <span>Profil</span>
                 </a>
-            </li>
-            <li class="nav-item <?= ($data['title'] == 'About' ? 'active' : '') ?>">
+            </li> -->
+            <!-- <li class="nav-item <?= ($data['title'] == 'About' ? 'active' : '') ?>">
                 <a class="nav-link" href="<?= BASEURL ?>/member/about">
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

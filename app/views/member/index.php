@@ -7,13 +7,13 @@
             <div class="col-lg-12">
                 <h5 class="mb-0">Selamat datang, <?= $data['nama'] ?>!</h5>
                 <small class="m-0">ID Member: <?= $data['id_member'] ?></small>
-                <p class="mt-3">Mau cari buku apa hari ini? yuk lihat beberapa koleksi buku terbaru kami!</p>
+                <p class="mt-3">Mau meminjam barang apa apa ?</p>
                 <table class="table">
                     <thead class="thead-light">
                         <tr>
                             <th>No</th>
-                            <th>Judul Buku</th>
-                            <th>Tahun Terbit</th>
+                            <th>Nama Barang</th>
+                            <th>Merek</th>
                             <th>Kategori</th>
                         </tr>
                     </thead>
