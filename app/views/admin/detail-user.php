@@ -8,7 +8,6 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><b>Username :</b> <?= $data['users']['username'] ?></li>
-                <li class="list-group-item"><b>Password :</b> <?= $data['users']['password'] ?></li>
                 <li class="list-group-item"><b>Role:</b> <?= $data['users']['role'] ?></li>
             </ul>
             <div class="card-body">

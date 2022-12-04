@@ -37,7 +37,7 @@
             <button class="btn btn-primary" type="submit" name="register">Register User</button>
             <button class="btn btn-danger" type="reset">Reset</button>
         </form>
-        
+
         <hr>
         <h3>Data User</h3>
         <?php if (Flasher::check()) : ?>
@@ -55,10 +55,9 @@
             <thead class="thead-dark text-center">
                 <tr>
                     <th>No</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Role</th>
                     <th>Nama</th>
+                    <th>Username</th>
+                    <th>Role</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -68,13 +67,11 @@
                     <?php foreach ($data['users'] as $brg) : ?>
                         <tr>
                             <td><?= $i ?></td>
-                            <td><?= $brg['username'] ?></td>
-                            <td><?= $brg['password'] ?></td>
-                            <td><?= $brg['role'] ?></td>
                             <td><?= $brg['nama'] ?></td>
+                            <td><?= $brg['username'] ?></td>
+                            <td><?= $brg['role'] ?></td>
                             <td class="text-center">
                                 <a class="badge badge-info" href="<?= BASEURL ?>/admin/detail-user/<?= $brg['id'] ?>">Detail ></a>
-                                <a class="badge badge-warning" href="<?= BASEURL ?>/admin/ubah-user/<?= $brg['id'] ?>">Ubah</a>
                                 <a class="badge badge-danger" href="<?= BASEURL ?>/admin/hapus-user/<?= $brg['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                             </td>
                         </tr>

@@ -146,6 +146,27 @@ class Admin extends Controller
         }
     }
 
+    public function ubah_user($id = 0)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->userModel->ubahUser($id, $_POST);
+            Flasher::setFlash('User berhasil diubah', 'success');
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+
+        if ($id) {
+            $data['title'] = 'Register';
+            $data['nama'] = $this->payload->nama;
+            $data['users'] = $this->userModel->getDetailUser($id);
+
+            $this->view('admin/header', $data);
+            $this->view('admin/ubah-user', $data);
+            $this->view('admin/footer');
+        } else {
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+    }
+
     public function daftar_user()
     {
         $data['title'] = 'User';

@@ -34,6 +34,42 @@ class User_model
         return $this->db->single();
     }
 
+    public function ubahUser($id, $data)
+    {
+        $username = htmlspecialchars($data['username']);
+        $password = htmlspecialchars($data['password']);
+        $role = htmlspecialchars($data['role']);
+        $nama = htmlspecialchars($data['nama']);
+
+        $sql = "UPDATE users SET
+                username = :username,
+                password = :password,
+                role = :role,
+                nama = :nama,
+                WHERE id = :id";
+
+        $this->db->query($sql);
+        $fields = [
+            'username' => $username,
+            'password' =>  $password,
+            'role' => $role,
+            'nama' =>  $nama,
+            'id' => $id
+        ];
+        $this->db->binds($fields);
+
+        try {
+            $this->db->execute();
+        } catch (\PDOException $e) {
+            if ($e->errorInfo[1] == 1062) {
+                return 0;
+                die;
+            }
+        }
+
+        return $this->db->rowCount();
+    }
+
     public function hapusUser($id)
     {
         //Cek apakah id buku ada dalam database
