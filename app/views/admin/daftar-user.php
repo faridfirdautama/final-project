@@ -1,4 +1,4 @@
-<h3 class="mb-3 text-center">Form Tambah User</h3>
+<h3 class="mb-3 text-center">Form Register User</h3>
 <div class="card shadow">
     <div class="card-body">
          <form action="<?= BASEURL ?>/admin/tambah-user" method="post">
