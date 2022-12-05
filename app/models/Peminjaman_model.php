@@ -21,10 +21,10 @@ class Peminjaman_model
     public function pinjamBelumKembali($data)
     {
         $id_member = $data['idmember'];
-        $id_buku = $data['buku'];
+        $id_barang = $data['data_barang'];
         $sql = "SELECT pinjaman.id_pinjaman FROM pinjaman
                 JOIN detail_pinjaman ON pinjaman.id_pinjaman = detail_pinjaman.id_pinjaman
-                WHERE id_member = $id_member AND id_buku = $id_buku AND tanggal_kembali IS NULL";
+                WHERE id_member = $id_member AND id_barang = $id_barang AND tanggal_kembali IS NULL";
         $this->db->query($sql);
         return $this->db->numRows();
     }
@@ -56,19 +56,19 @@ class Peminjaman_model
         $this->db->execute();
         $id_peminjaman = $this->db->lastInsertId();
 
-        foreach ($pinjaman as $buku) {
+        foreach ($pinjaman as $data_barang) {
             $sql = "INSERT INTO detail_pinjaman VALUES
-                    (:id_peminjaman, '$buku[id_buku]')";
+                    (:id_peminjaman, '$barang[id_barang]')";
             $this->db->query($sql);
             $this->db->bind('id_peminjaman', $id_peminjaman);
             $this->db->execute();
         }
     }
 
-    public function getPinjamanBuku($id_pinjaman)
+    public function getPinjamanBarang($id_pinjaman)
     {
-        $sql = "SELECT judul FROM buku
-                JOIN detail_pinjaman ON detail_pinjaman.id_buku = buku.id
+        $sql = "SELECT nama_barang FROM data_barang
+                JOIN detail_pinjaman ON detail_pinjaman.id_barang = data_barang.id
                 WHERE id_pinjaman = '$id_pinjaman'";
         $this->db->query($sql);
         return $this->db->resultSet();

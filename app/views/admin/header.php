@@ -74,12 +74,12 @@
                     <span>Kategori</span>
                 </a>
             </li>
-            <li class="nav-item <?= ($data['title'] == 'About' ? 'active' : '') ?>">
+            <!-- <li class="nav-item <?= ($data['title'] == 'About' ? 'active' : '') ?>">
                 <a class="nav-link" href="<?= BASEURL ?>/admin/about">
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

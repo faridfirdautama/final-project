@@ -2,7 +2,7 @@
 
 class Admin extends Controller
 {
-    private $bukuModel;
+    // private $bukuModel;
     private $barangModel;
     private $penerbitModel;
     private $kategoriModel;
@@ -21,7 +21,7 @@ class Admin extends Controller
             header('Location: ' . BASEURL . '/login');
         }
 
-        $this->bukuModel = $this->model('Buku_model');
+        // $this->bukuModel = $this->model('Buku_model');
         $this->barangModel = $this->model('Barang_model');
         $this->penerbitModel = $this->model('Penerbit_model');
         $this->kategoriModel = $this->model('Kategori_model');
@@ -33,7 +33,7 @@ class Admin extends Controller
     {
         $data['title'] = 'Home';
         $data['nama'] = $this->payload->nama;
-        $data['jml_buku'] = $this->bukuModel->countBuku();
+        $data['jml_barang'] = $this->barangModel->countBarang();
         $data['jml_member'] = $this->userModel->countMember();
         $data['belum_kembali'] = $this->peminjamanModel->countBelumKembali();
 
@@ -212,7 +212,7 @@ class Admin extends Controller
     {
         $data['title'] = 'Input Peminjaman';
         $data['nama'] = $this->payload->nama;
-        $data['buku'] = $this->bukuModel->getAllBuku();
+        $data['data_barang'] = $this->barangModel->getAllBarang();
         $data['waktu'] = [
             [
                 'waktu' => 3,
