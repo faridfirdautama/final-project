@@ -313,6 +313,18 @@ class Admin extends Controller
         $this->view('admin/footer');
     }
 
+
+    public function departement()
+    {
+        $data['title'] = 'Departement';
+        $data['nama'] = $this->payload->nama;
+        $data['kategori'] = $this->kategoriModel->getAllKategori();
+        $this->view('admin/header', $data);
+        $this->view('admin/departement', $data);
+        $this->view('admin/footer');
+    }
+
+
     public function tambah_kategori()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
