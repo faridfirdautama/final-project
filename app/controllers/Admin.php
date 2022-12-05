@@ -115,7 +115,8 @@ class Admin extends Controller
         }
     }
 
-    public function tambah_user() {
+    public function tambah_user()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             header('Location: ' . BASEURL . '/admin/daftar-user');
         }
@@ -374,6 +375,6 @@ class Admin extends Controller
         session_unset();
         session_destroy();
         setcookie('PPI-Login', '', time() - 3600 * 24 * 30, '/');
-        header('Location: ' . BASEURL . '/login');
+        header('Location: ' . BASEURL . '');
     }
 }

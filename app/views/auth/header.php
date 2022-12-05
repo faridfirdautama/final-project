@@ -1,19 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= APP_NAME ?> - <?= $data['judul'] ?>/</title>
-    <link rel="icon" href="<?= BASEURL ?>/favicon.ico" type="image/png">
-    <!-- Custom fonts for this template-->
-    <script src="https://kit.fontawesome.com/386a70e6e1.js" crossorigin="anonymous" defer></script>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title><?= APP_NAME ?> - <?= $data['judul'] ?></title>
 
-    <!-- Custom styles for this template-->
-    <link href="<?= BASEURL ?>/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/simplebar.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/simplebar.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/feather.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/select2.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/dropzone.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/uppy.min.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/jquery.steps.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/quill.snow.css">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="<?= BASEURL ?>light/css/app-dark.css" id="darkTheme" disabled>
 </head>
 
-<body class="bg-gradient-primary">
 
-    <div class="container">
+
+<body class="vertical  light  ">
+    <div class="wrapper">
