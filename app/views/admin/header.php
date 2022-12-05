@@ -84,7 +84,58 @@
                     </a>
                 </div>
 
+<<<<<<< HEAD
                 <!-- Memanggil sidebar admin -->
+=======
+            <li class="nav-item <?= ($data['title'] == 'Home' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'User' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-user">
+                    <i class="fas fa-book"></i>
+                    <span>Daftar User</span>
+                </a>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'Barang' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-barang">
+                    <i class="fas fa-book"></i>
+                    <span>Daftar Barang</span>
+                </a>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'Input Peminjaman' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/input-peminjaman">
+                    <i class="fas fa-arrow-circle-down"></i>
+                    <span>Input Peminjaman</span>
+                </a>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'Daftar Pinjaman' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-pinjaman">
+                    <i class="fas fa-list"></i>
+                    <span>Daftar Pinjaman</span>
+                </a>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'Penerbit' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/penerbit">
+                    <i class="fas fa-user-tag"></i>
+                    <span>Penerbit</span>
+                </a>
+            </li>
+            <li class="nav-item <?= ($data['title'] == 'Kategori' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/kategori">
+                    <i class="fas fa-tags"></i>
+                    <span>Kategori</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item <?= ($data['title'] == 'About' ? 'active' : '') ?>">
+                <a class="nav-link" href="<?= BASEURL ?>/admin/about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </li> -->
+>>>>>>> 2dbbd5b8c6cd6c214061f077bbb67c26812116c6
 
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 

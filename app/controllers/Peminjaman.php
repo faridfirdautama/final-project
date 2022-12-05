@@ -5,7 +5,8 @@ class Peminjaman extends Controller
 
     private $peminjamanModel;
     private $userModel;
-    private $bukuModel;
+    private $barangModel;
+    // private $bukuModel;
 
     function __construct()
     {
@@ -19,7 +20,7 @@ class Peminjaman extends Controller
         }
         $this->peminjamanModel = $this->model('Peminjaman_model');
         $this->userModel = $this->model('User_model');
-        $this->bukuModel = $this->model('Buku_model');
+        $this->barangModel = $this->model('Barang_model');
     }
 
     public function index()
@@ -30,7 +31,7 @@ class Peminjaman extends Controller
     public function tambah()
     {
         $id_member = $_POST['idmember'];
-        $id_buku = $_POST['buku'];
+        $id_barang = $_POST['barang'];
 
         $sudahPinjamBelumKembali = $this->peminjamanModel->pinjamBelumKembali($_POST);
         if ($sudahPinjamBelumKembali > 0) {
@@ -45,12 +46,12 @@ class Peminjaman extends Controller
             die;
         }
 
-        $judul = $this->bukuModel->getDetailBuku($id_buku)['judul'];
-        $row_id = md5(serialize($id_buku));
+        $nama_barang = $this->barangModel->getDetailBarang($id_barang)['nama_barang'];
+        $row_id = md5(serialize($id_barang));
         $data = [
             $row_id => [
-                'id_buku' => $id_buku,
-                'judul' => $judul,
+                'id_barang' => $id_barang,
+                'nama_barang' => $nama_barang,
                 'row_id' => $row_id
             ]
         ];
@@ -64,8 +65,8 @@ class Peminjaman extends Controller
             echo json_encode($_SESSION['pinjaman']);
         } else {
             $exist = false;
-            foreach ($_SESSION['pinjaman'] as $buku) {
-                if ($buku['id_buku'] == $id_buku) {
+            foreach ($_SESSION['pinjaman'] as $data_barang) {
+                if ($data_barang['id_barang'] == $id_barang) {
                     $exist = true;
                     break;
                 }
@@ -136,7 +137,7 @@ class Peminjaman extends Controller
     {
         $id_pinjaman = $_POST['id'];
 
-        $buku = $this->peminjamanModel->getPinjamanBuku($id_pinjaman);
+        $data_barang = $this->peminjamanModel->getPinjamanBarang($id_pinjaman);
         $pinjaman = $this->peminjamanModel->getDetailPinjaman($id_pinjaman);
 
         echo json_encode([$buku, $pinjaman]);

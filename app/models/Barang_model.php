@@ -22,9 +22,9 @@ class Barang_model
         return $this->db->single();
     }
 
-    public function countBuku()
+    public function countBarang()
     {
-        $this->db->query("SELECT COUNT(*) FROM buku");
+        $this->db->query("SELECT COUNT(*) FROM data_barang");
         return $this->db->numRows();
     }
 

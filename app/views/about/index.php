@@ -1,4 +1,4 @@
-<div class="card shadow">
+<!-- <div class="card shadow">
     <div class="card-body">
         <h3 class="mb-3 text-center">Tentang web ini</h3>
         <p>
@@ -15,4 +15,4 @@
             Kelas : BI183
         </p>
     </div>
-</div>
+</div> -->

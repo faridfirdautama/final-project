@@ -33,12 +33,12 @@
         </div>
 
         <div class="form-group row">
-            <label for="buku" class="col-sm-2 col-form-label">Buku</label>
+            <label for="data_barang" class="col-sm-2 col-form-label">Barang</label>
             <div class="col-sm-4">
-                <select class="form-control selectpicker" id="buku" data-live-search="true" name="buku" required>
-                    <option value="">--- Pilih buku ---</option>
-                    <?php foreach ($data['buku'] as $b) : ?>
-                        <option value="<?= $b['id'] ?>"><?= $b['judul'] ?></option>
+                <select class="form-control selectpicker" id="barang" data-live-search="true" name="barang" required>
+                    <option value="">--- Pilih barang ---</option>
+                    <?php foreach ($data['data_barang'] as $b) : ?>
+                        <option value="<?= $b['id'] ?>"><?= $b['nama_barang'] ?></option>
                     <?php endforeach ?>
                 </select>
             </div>
@@ -50,7 +50,7 @@
             <thead class="thead-light">
                 <tr>
                     <th>No</th>
-                    <th>Judul Buku</th>
+                    <th>Nama Barang</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -60,7 +60,7 @@
                     foreach ($_SESSION['pinjaman'] as $key => $value) : ?>
                         <tr>
                             <td><?= $i++ ?></td>
-                            <td><?= $value['judul'] ?></td>
+                            <td><?= $value['nama_barang'] ?></td>
                             <td><a href="<?= BASEURL ?>/peminjaman/hapus/<?= $value['row_id'] ?>" class="badge badge-danger">Hapus</a></td>
                         </tr>
                     <?php endforeach ?>
