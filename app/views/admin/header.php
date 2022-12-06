@@ -105,7 +105,7 @@
 
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-user">
-                            <i class="fe fe-user fe-16"></i>
+                            <i class="fe fe-user-plus fe-16"></i>
                             <span class="ml-3 item-text">Daftar User</span>
                         </a>
                     </li>
@@ -121,7 +121,7 @@
 
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/admin/input-peminjaman">
-                            <i class="fe fe-credit-card fe-16"></i>
+                            <i class="fe fe-edit fe-16"></i>
                             <span class="ml-3 item-text">Input Peminjaman</span>
                         </a>
                     </li>
@@ -132,6 +132,15 @@
                         <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-pinjaman">
                             <i class="fe fe-grid fe-16"></i>
                             <span class="ml-3 item-text">Daftar Peminjaman</span>
+                        </a>
+                    </li>
+
+
+
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="<?= BASEURL ?>/admin/departement">
+                            <i class="fe fe-users fe-16"></i>
+                            <span class="ml-3 item-text">Departement</span>
                         </a>
                     </li>
 
