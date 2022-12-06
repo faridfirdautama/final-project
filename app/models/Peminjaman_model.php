@@ -58,7 +58,7 @@ class Peminjaman_model
 
         foreach ($pinjaman as $data_barang) {
             $sql = "INSERT INTO detail_pinjaman VALUES
-                    (:id_peminjaman, '$barang[id_barang]')";
+                    (:id_peminjaman, '$barang[id]')";
             $this->db->query($sql);
             $this->db->bind('id_peminjaman', $id_peminjaman);
             $this->db->execute();
