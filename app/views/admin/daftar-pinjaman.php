@@ -70,7 +70,7 @@
                     <p id="nama-member"></p>
                     <p id="lama-pinjam"></p>
                     <p id="denda"></p>
-                    <ol id="daftar-buku">
+                    <ol id="daftar-barang">
 
                     </ol>
                 </div>
