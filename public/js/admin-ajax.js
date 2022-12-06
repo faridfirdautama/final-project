@@ -1,26 +1,26 @@
 const base_url = $('meta[name="base_url"]').attr('content');
 $('#tambah-peminjaman').on('click', function () {
     let idmember = $('#id-member').val();
-    let buku = $('#buku').val();
+    let barang = $('#barang').val();
     let waktu = $('#lama-pinjam').val();
-    if (buku == "" || waktu == "") {
-        alert('Mohon masukkan buku atau waktu peminjaman terlebih dahulu.');
+    if (barang == "" || waktu == "") {
+        alert('Mohon masukkan barang atau waktu peminjaman terlebih dahulu.');
         return;
     }
     $.ajax({
         url: base_url + '/peminjaman/tambah',
         data: {
             idmember: idmember,
-            buku: buku,
+            barang: barang,
             waktu: waktu
         },
         method: 'post',
         dataType: 'json',
         success: function (data) {
             if (data == 'exist') {
-                alert('Buku ini sudah masuk ke sesi peminjaman');
+                alert('Barang ini sudah masuk ke sesi peminjaman');
             } else if (data == 'x') {
-                alert('Buku ini sudah dipinjam dan belum dikembalikan, harap dikembalikan dulu');
+                alert('Barang ini sudah dipinjam dan belum dikembalikan, harap dikembalikan dulu');
             } else if (data == 'xmember') {
                 alert('Member tidak ditemukan, harap cek member terlebih dahulu.');
             } else {
@@ -30,7 +30,7 @@ $('#tambah-peminjaman').on('click', function () {
                     tabel +=
                         '<tr>' +
                         '<td>' + j++ + '</td>' +
-                        '<td>' + val.judul + '</td>' +
+                        '<td>' + val.nama_barang + '</td>' +
                         '<td><a href="' + base_url + '/peminjaman/hapus/' + val.row_id + '" class="badge badge-danger btn-hapus">Hapus</a></td>' +
                         '</tr>'
                 });
@@ -106,12 +106,12 @@ $(document).on('click', '.btn-detail-pinjaman', function () {
             } else {
                 $('#denda').html('Denda : Rp 0');
             }
-            let buku = '';
+            let barang = '';
             $.each(data[0], function (i, val) {
-                buku +=
-                    '<li>' + val.judul + '</li>'
+                barang +=
+                    '<li>' + val.nama_barang + '</li>'
             });
-            $('#daftar-buku').html(buku);
+            $('#daftar-barang').html(barang);
         }
     });
 });
