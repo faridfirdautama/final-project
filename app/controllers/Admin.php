@@ -25,6 +25,7 @@ class Admin extends Controller
         $this->barangModel = $this->model('Barang_model');
         $this->penerbitModel = $this->model('Penerbit_model');
         $this->kategoriModel = $this->model('Kategori_model');
+        $this->departementModel = $this->model('Departement_model');
         $this->peminjamanModel = $this->model('Peminjaman_model');
         $this->userModel = $this->model('User_model');
     }
@@ -96,6 +97,27 @@ class Admin extends Controller
             $this->view('admin/footer');
         } else {
             header('Location: ' . BASEURL . '/admin/daftar-barang');
+        }
+    }
+
+    public function ubah_departement($id_departement = 0)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->departementModel->updateDepartement($id_departement, $_POST);
+            Flasher::setFlash('Departement berhasil diubah', 'success');
+            header('Location: ' . BASEURL . '/admin/departement');
+        }
+
+        if ($id) {
+            $data['title'] = 'Departement';
+            $data['nama'] = $this->payload->nama;
+            $data['departement'] = $this->departementModel->getDepartementById($id_departement);
+
+            $this->view('admin/header', $data);
+            $this->view('admin/update-departement', $data);
+            $this->view('admin/footer');
+        } else {
+            header('Location: ' . BASEURL . '/admin/departement');
         }
     }
 
@@ -303,6 +325,66 @@ class Admin extends Controller
         }
     }
 
+    public function departement()
+    {
+        $data['title'] = 'Departement';
+        $data['nama'] = $this->payload->nama;
+        $data['departement'] = $this->departementModel->getAllDepartement();
+        $this->view('admin/header', $data);
+        $this->view('admin/departement', $data);
+        $this->view('admin/footer');
+    }
+
+    public function tambah_departement()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            header('Location: ' . BASEURL . '/admin/departement');
+        }
+
+        $this->departementModel->tambahDepartement($_POST);
+        Flasher::setFlash('Departement baru berhasil ditambah', 'success');
+        header('Location: ' . BASEURL . '/admin/departement');
+    }
+
+    
+    public function hapus_departement($id_departement)
+    {
+        if (!$id_departement) {
+            header('Location: ' . BASEURL . '/admin/departement');
+        }
+
+        $hapus = $this->departementModel->hapusDepartement($id_departement);
+        if ($hapus == 0) {
+            Flasher::setFlash('Departement tidak ditemukan', 'danger');
+            header('Location: ' . BASEURL . '/admin/departement');
+        } else {
+            Flasher::setFlash('Departement berhasil dihapus', 'success');
+            header('Location: ' . BASEURL . '/admin/departement');
+        }
+    }
+    
+    public function update_departement($id_departement = 0)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->departementModel->updateDepartement($id_departement, $_POST);
+            Flasher::setFlash('Departement berhasil diubah', 'success');
+            header('Location: ' . BASEURL . '/admin/departement');
+        }
+
+        if ($id) {
+            $data['title'] = 'Departement';
+            $data['nama'] = $this->payload->nama;
+            $data['departement'] = $this->departementModel->getDepartementById($id_departement);
+
+            $this->view('admin/header', $data);
+            $this->view('admin/update-departement', $data);
+            $this->view('admin/footer');
+        } else {
+            header('Location: ' . BASEURL . '/admin/departement');
+        }
+    }
+
+
     public function kategori()
     {
         $data['title'] = 'Kategori';
@@ -312,17 +394,7 @@ class Admin extends Controller
         $this->view('admin/kategori', $data);
         $this->view('admin/footer');
     }
-
-
-    public function departement()
-    {
-        $data['title'] = 'Departement';
-        $data['nama'] = $this->payload->nama;
-        $data['kategori'] = $this->kategoriModel->getAllKategori();
-        $this->view('admin/header', $data);
-        $this->view('admin/departement', $data);
-        $this->view('admin/footer');
-    }
+    
 
 
     public function tambah_kategori()
