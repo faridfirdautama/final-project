@@ -140,7 +140,7 @@ class Peminjaman extends Controller
         $data_barang = $this->peminjamanModel->getPinjamanBarang($id_pinjaman);
         $pinjaman = $this->peminjamanModel->getDetailPinjaman($id_pinjaman);
 
-        echo json_encode([$buku, $pinjaman]);
+        echo json_encode([$data_barang, $pinjaman]);
     }
 
     public function selesai()

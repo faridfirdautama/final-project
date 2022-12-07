@@ -21,7 +21,7 @@ class Peminjaman_model
     public function pinjamBelumKembali($data)
     {
         $id_member = $data['idmember'];
-        $id_barang = $data['data_barang'];
+        $id_barang = $data['barang'];
         $sql = "SELECT pinjaman.id_pinjaman FROM pinjaman
                 JOIN detail_pinjaman ON pinjaman.id_pinjaman = detail_pinjaman.id_pinjaman
                 WHERE id_member = $id_member AND id_barang = $id_barang AND tanggal_kembali IS NULL";
@@ -58,7 +58,7 @@ class Peminjaman_model
 
         foreach ($pinjaman as $data_barang) {
             $sql = "INSERT INTO detail_pinjaman VALUES
-                    (:id_peminjaman, '$barang[id]')";
+            (:id_peminjaman, '$data_barang[id_barang]')";
             $this->db->query($sql);
             $this->db->bind('id_peminjaman', $id_peminjaman);
             $this->db->execute();
