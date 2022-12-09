@@ -109,7 +109,7 @@ class User_model
 
         $new_password = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO users VALUES 
-                    (null, :username, :pass, 2, :nama)";
+                    (null, :username, :pass, 1, :nama)";
 
         $this->db->query($query);
         $fields = [
