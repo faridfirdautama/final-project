@@ -216,6 +216,7 @@
     gtag('config', 'UA-56159088-1');
 </script>
 <script src="<?= BASEURL ?>/js/admin-ajax.js"></script>
+<script src="<?= BASEURL ?>/js/member-ajax.js"></script>
 <script type="text/javascript">
     $('#daftar-pinjaman').DataTable();
     $('#tbl-daftar-barang').DataTable();
