@@ -108,7 +108,7 @@ class Admin extends Controller
             header('Location: ' . BASEURL . '/admin/departement');
         }
 
-        if ($id) {
+        if ($id_departement) {
             $data['title'] = 'Departement';
             $data['nama'] = $this->payload->nama;
             $data['departement'] = $this->departementModel->getDepartementById($id_departement);
@@ -371,7 +371,7 @@ class Admin extends Controller
             header('Location: ' . BASEURL . '/admin/departement');
         }
 
-        if ($id) {
+        if ($id_departement) {
             $data['title'] = 'Departement';
             $data['nama'] = $this->payload->nama;
             $data['departement'] = $this->departementModel->getDepartementById($id_departement);
