@@ -215,6 +215,16 @@
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
 </script>
+<script src="<?= BASEURL ?>/js/admin-ajax.js"></script>
+<script type="text/javascript">
+    $('#daftar-pinjaman').DataTable();
+    $('#tbl-daftar-barang').DataTable();
+    $('#tbl-list-penerbit').DataTable();
+    $('#tbl-list-kategori').DataTable();
+</script>
+
+<!-- Custom scripts for all pages-->
+<script src="<?= BASEURL ?>/js/sb-admin-2.min.js"></script>
 </body>
 
 </html>
